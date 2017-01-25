@@ -1,4 +1,4 @@
-int size = 0;
+int n = 0;
 int posY = height/2;
 
 public void setup() {
@@ -6,11 +6,11 @@ public void setup() {
 }
 
 public void draw() {
-	size = Math.abs(250 - mouseX)* 2;
-	posY = (height - size) / 2;
+	n = Math.abs(250 - mouseX)* 2;
+	posY = (height - n) / 2;
 
 	background(125);
-	sierpinski(width / 2, posY, size);
+	sierpinski(width / 2, posY, n);
 }
 
 
