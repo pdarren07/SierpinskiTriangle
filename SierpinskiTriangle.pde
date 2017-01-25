@@ -1,24 +1,22 @@
-int size = 500;
+int size = 0;
+int posY = height/2;
 
 public void setup() {
 	size(500, 500);
 }
 
 public void draw() {
-	size = Math.abs(250 - mouseX) * 2;
-	
+	size = Math.abs(250 - mouseX)* 2;
+	posY = (height - size) / 2;
+
 	background(125);
-	sierpinski(width / 2, height * 0, size);
+	sierpinski(width / 2, posY, size);
 }
 
-public void mouseDragged() {
-	size = Math.abs(250 - mouseX) * 2;
-}
 
 public void sierpinski(int x, int y, int len) {
 
 	if (len <= 5) {
-		//triangle(x, y, x + len, y + len, x - len, y + len);
 		fill(255);
 	} else {
 		triangle(x, y, x-(len/2), y+len, x+(len/2), y+len);
